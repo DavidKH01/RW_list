@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Watch list</title>
+
+    </head>
+
+    <body>
+        <button onclick="
+            test()
+        ">Get List</button>
+
+
+
+
+        <script>
+
+            if (true){
+                console.log("scripts in html")
+            }
+            function test () {
+                fetch('http://127.0.0.1:5000')
+                    .then(res => res.json())
+                    .then(res => console.log(res))
+            }
+
+            // test()
+
+
+        </script>
+    </body>
+</html>

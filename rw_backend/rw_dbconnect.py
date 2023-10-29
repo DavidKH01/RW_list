@@ -7,7 +7,9 @@ def connect():
     #code copied from mongobd connect
     from pymongo.mongo_client import MongoClient
 
+    # if it wont connect, check that mongodb has the correct IP address listed 
     uri = "mongodb+srv://danny:0@cluster0.hgtihbs.mongodb.net/?retryWrites=true&w=majority"
+    # uri = "mongodb+srv://danny:0@cluster0.hgtihbs.mongodb.net/"
 
     # Create a new client and connect to the server
     client = MongoClient(uri)
@@ -30,6 +32,16 @@ def wlist():
     #print(mydb.list_collection_names())
     mywlist = mydb["watch_list"]
 
-    for x in mywlist.find():
-        print(x)
 
+    res = []    
+    for x in mywlist.find():
+        # need to remove _id key as it turns item into an non iterable object
+        x.pop('_id')
+        print(x)
+        res.append(x)
+    else:
+        print('Else statement')
+        print(res)
+        return (res)
+ 
+# wlist()
