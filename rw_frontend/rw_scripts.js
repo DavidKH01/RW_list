@@ -1,3 +1,8 @@
-const Queires = require("../rw_backend/rw_dbqueires")
+function test () {
+  fetch('http://127.0.0.1:5000')
+    .then(res => res.json())
+    .then(res => console.log(data))
 
-console.log(Queires.getList())
+}
+
+test()
