@@ -37,11 +37,13 @@ def wlist():
     for x in mywlist.find():
         # need to remove _id key as it turns item into an non iterable object
         x.pop('_id')
-        print(x)
-        res.append(x)
+
+        for key, value in x.items():
+            print(f"{key}: {value}")
+            res.append(f"{key}: {value}")
     else:
         print('Else statement')
         print(res)
         return (res)
- 
+   
 # wlist()

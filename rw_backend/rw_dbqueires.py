@@ -9,5 +9,5 @@ def getList ():
     print( type (watchlist))
     return(watchlist)
 
-# getList()
+getList()
 

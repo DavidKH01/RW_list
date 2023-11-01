@@ -3,26 +3,82 @@
 
     <head>
         <title>Watch list</title>
+        <link rel="stylesheet" type="text/css" href="css/rw_style.css" />
 
     </head>
 
     <body>
-        <button onclick="
-            test()
-        ">Get List</button>
+        <header class="css-header">
+            <div class="css-header-img">
+                <h1>My Read and Watch List</h1>
 
+            </div>
+        </header>
 
+        <div class="css-div1">
+                <div class="css-div1-content"></div>
+
+                <button onclick="
+                    test()
+                ">Get List</button>
+                <p>Need more content here to test pages</p>
+
+                <p id="show_list"></p>
+                <p id ="show_test"></p>
+            </div>
+        </div>
+        
+        <div class="sidenav">
+            <div class="profile-picture">
+                <img src="profile.jpg" alt="Profile Picture">
+            </div>
+            <ul class="nav-options">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">READ LIST</a></li>
+                <li><a href="#">WATCH LIST</a></li>
+                <li><a href="#">ADD/REMOVE</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            
+            <button onclick="
+                test()
+            ">Get List</button>
+
+            <p id="show_list"></p>
+            <p id ="show_test"></p>
+        </div>
 
 
         <script>
 
+            let listTest = "this is a test"
+            document.getElementById('show_list').innerHTML = listTest;
+
             if (true){
-                console.log("scripts in html")
-            }
+                console.log("scripts in html");
+            };
+            
             function test () {
-                fetch('http://127.0.0.1:5000')
+                let fetch_data = fetch('http://127.0.0.1:5000')
+                    // res is the data or (response) from the fetch
+                    //.json() method. This method reads the response body as JSON and returns a Promise that resolves to the parsed JavaScript object or data structure.
                     .then(res => res.json())
-                    .then(res => console.log(res))
+                    
+                    .then(res => JSON.stringify(res))
+                    
+                    .then(res => {console.log(res); document.getElementById('show_list').innerHTML=`${res}` })
+                
+                    //  this code works but missing the name of the variable in the ${} that will print the data
+                    // .then(res => res.json())
+                    // .then(res => console.log(res))
+                    // .then(res =>{show_test.innerHTML=`this should be list: ${}`})
+
+                    //This will overwrite anyone in the show_list id once run
+                    document.getElementById('show_list').innerHTML= "This is where the list goes"
+                    
+                    
             }
 
             // test()
