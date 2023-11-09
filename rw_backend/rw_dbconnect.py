@@ -1,3 +1,4 @@
+import pymongo
 #turn mongodb connection into a module to be used
 
 def connect():
@@ -33,17 +34,20 @@ def wlist():
     mywlist = mydb["watch_list"]
 
 
-    res = []    
-    for x in mywlist.find():
+    # count number of items in collections 
+    count = mywlist.count_documents({})
+    
+       
+    for x in range(count):
         # need to remove _id key as it turns item into an non iterable object
-        x.pop('_id')
+        # print(mywlist.find()[x])
+        lit = mywlist.find()[x]
+        del lit['_id']
+        print(lit)
+  
 
-        for key, value in x.items():
-            print(f"{key}: {value}")
-            res.append(f"{key}: {value}")
-    else:
-        print('Else statement')
-        print(res)
-        return (res)
-   
-# wlist()
+
+
+
+
+wlist()

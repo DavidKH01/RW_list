@@ -1,13 +1,27 @@
 import rw_dbconnect as rwc
-
+rwlist = rwc.wlist()
 
 
 
 #Get all items from watchlist
 def getList ():
-    watchlist = rwc.wlist()
-    print( type (watchlist))
-    return(watchlist)
+    print( type (rwlist))
+    return(rwlist)
+
+
+
+print(rwlist['name'])
+
+
+
+
+
+
+
+
+
+
+
 
 getList()
 
