@@ -1,5 +1,6 @@
 body{
  background-color: black;
+ width: auto;
 }
 
 .css-div1{
@@ -12,9 +13,10 @@ body{
 }
 
 .css-div1-content{
-  margin-left: 250px;
-  color: aliceblue;
+  color: rgb(255, 254, 254);
   font-weight: bold;
+  text-align: center;
+
 }
 
 button{
