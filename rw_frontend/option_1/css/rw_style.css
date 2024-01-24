@@ -130,7 +130,7 @@ body, ul {
   display: flex;
   justify-content: flex-end; /* Adjusted to align tiles to the right */
   max-width: 50%; /* Added maximum width to keep the tiles within the right half */
-  margin-left: auto; /* Push the container to the right */
+  /* margin-left: auto; Push the container to the right */
 }
 
 .tile {

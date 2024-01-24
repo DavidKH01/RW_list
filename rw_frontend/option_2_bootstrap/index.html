@@ -5,57 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-  <!-- <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-size: cover;
-      background-repeat: no-repeat;
-      animation: rotateBackground 120s linear infinite;
+  <style>
+    *{ border: 1px solid red; }
+
+    .card{
+      display: inline-block
     }
 
-    @keyframes rotateBackground {
-      0% {
-        background-image: url('css/3willbefree.jpg');
-      }
-      33.33% {
-        background-image: url('css/DBK.jpg');
-      }
-      66.66% {
-        background-image: url('css/cherrymagic.jpeg');
-      }
-      100% {
-        background-image: url('css/where_your_eyes_linger.jpg'); /* Repeats the cycle */
-      }
+    .card-img-top {
+      height: 100%;
+      object-fit: cover;
     }
-  </style> -->
+
+
+    @media(min-width: 992px) {
+    .navbar {
+        display:;
+        min-height: 100vh;
+        width: 400px;
+        /* make navbar a different color straigh down */
+        background: linear-gradient(rgba(3, 63, 71, 0.899),rgba(3, 63, 71, 0.889) ), url(https://picsum.photos/200/300);
+        background-size: cover;
+        background-position: center;
+    }
+
+    #content-wrapper {
+      padding-left: 500px;
+      
+      padding-top: 200px;
+    }
+}
+  </style>
 </head>
-<body  style="background-color: rgba(212, 193, 193, 0.733);">
 
 
-  
-  <div class="container-lg my-5">
-    <div class="row">
+<body  style="background-color: rgba(0, 0, 0, 0.733);">
+
+
+
+    <!-- <div class="row"> -->
       <!-- display class in bootstrap is lilke header but bigger -->
       <!-- display-2 and text-center are two diff bootstrap classes -->
-      <div class="display-2 text-center">BL and Anime Tracker</div>
+      <!-- adding fixed-top to navbar allowed for next  content-wrapper div to be in line-->
       
-      <nav class="navbar navbar-expand-lg ">
+      <nav class="navbar navbar-expand-lg flex-lg-column navbar-dark fixed-top  ">
+        <div class="display-3 text-center text-white mx-lg-5">ReadWatch Log</div>
         <div class="container-fluid border ">
           <!-- <a class="navbar-brand" href="#">Navbar</a> -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-center border-danger" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse justify-content-center border-success" id="navbarNavDropdown">
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link border border-warning" href="#">Features</a>
+                <a class="nav-link border border-warning" href="#">WatchList</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">ReadList</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -67,33 +76,83 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
               </li>
-
             </ul>
           </div>
         </div>
       </nav>
-          
-      
+
+
+    <div class="border-info border-5 " id="content-wrapper">
+      <section class="border-warning border-12 col-2  pb-5" id="projects">
+        <div class="card" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://picsum.photos/200" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+     </section>
+
+     <section class="border-warning border-12 col-2  pb-5" id="projects">
+        <div class="card">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://picsum.photos/200" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+     </section>
+
+     <section class="border-warning border-12 col-2  pb-5" id="projects">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://picsum.photos/200" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+   </section>
     </div>
-  </div>
+
 
 
 
   <!-- fluid container fills page -->
   <!-- container order, heigh, then vh, then h to size things -->
-  <div class="container-fluid height: 100px;">
-    <div class="row vh-100">
+  <!-- <div class="container-fluid height: 100px;"> -->
+    <!-- <div class="row vh-100"> -->
 
-      <div class="col-3">
+      <!-- <div class="col-3"> -->
         <!-- boostrap: bg is background, info is a color  -->
         <!-- this is another combined class -->
-        <div class="border border-dark h-75">
-          <div>1</div>
+        <!-- <div class="border bg-info border-dark h-75"> -->
+          <!-- <div>1</div>
           <div>3</div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="col">
+      <!-- <div class="col">
         <div class="bg-info h-75">2</div>
       </div>
       <div class="col">
@@ -101,7 +160,7 @@
       </div>
 
     </div>
-  </div>
+  </div> -->
 
  
     
