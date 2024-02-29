@@ -1,5 +1,12 @@
-#turn mongodb connection into a module to be used
+# dotenv syntax for python
+# pip install python-dotenv
+import os
+from dotenv import load_dotenv, find_dotenv
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
 
+
+#turn mongodb connection into a module to be used
 def connect():
     #allow variable to be used outside of function
     global client
@@ -8,8 +15,8 @@ def connect():
     from pymongo.mongo_client import MongoClient
 
     # if it wont connect, check that mongodb has the correct IP address listed 
-    uri = "mongodb+srv://danny:0@cluster0.hgtihbs.mongodb.net/?retryWrites=true&w=majority"
-    # uri = "mongodb+srv://danny:0@cluster0.hgtihbs.mongodb.net/"
+    uri = os.getenv("mongodb_uri")
+    # uri = removed...check .env"
 
     # Create a new client and connect to the server
     client = MongoClient(uri)
@@ -46,4 +53,5 @@ def wlist():
         print(res)
         return (res)
    
-# wlist()
+   
+#wlist()
